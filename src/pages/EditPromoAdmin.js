@@ -1,35 +1,39 @@
 import { Component } from 'react';
 import Layout from '../layouts/Layout';
-import { Form, Card, ToggleButton, ToggleButtonGroup, Breadcrumb } from 'react-bootstrap';
-// import { Form } from 'react-bootstrap';
+import { Card, Form, Breadcrumb } from 'react-bootstrap';
 import BDButton from '../components/BDButton';
 import BDInput from '../components/BDInput';
-import Product from '../assets/img/image-promo.png';
-import '../assets/scss/editpromoadmin.scss';
+import Product from '../assets/images/promo.png';
+import '../assets/scss/EditPromo.scss';
 
-export default class InputProduct extends Component {
+export default class InputPromo extends Component {
   render () {
     return (
       <Layout>
-          <div className="container">
-            <Breadcrumb className='nav-bread'>
+          <div className="container mb-5">
+            <div className='d-flex flex-row justify-content-between'>
+            <Breadcrumb className='nav-bread mt-5'>
+              <div className='d-flex flex-row '>
                 <Breadcrumb.Item>Favorite & Promo</Breadcrumb.Item>
-                <Breadcrumb.Item active>Edit promo</Breadcrumb.Item>
+                <Breadcrumb.Item active className='fw-bold'>Edit promo</Breadcrumb.Item>
+              </div>
             </Breadcrumb>
-            <Breadcrumb className='nav-bread col3'>
-                <Breadcrumb.Item active>Cancel</Breadcrumb.Item>
-            </Breadcrumb>
+            <div className='mt-5'>
+              <a active className='fw-bold'>Cancel</a>
+              </div>
+            </div>
             <div className='row mt-5'>
-                <div className='col-md-5 me-md-4 col-xl-5 me-xl-5'>
-                <Card style={{ width: '18rem' }}>
+                <div className='col-md-5 me-md-4 col-xl-5 me-xl-6'>
+                    <div className='text-center'>
+                    <Card style={{ width: '100%' }} className='bg-secondary'>
                     <Card.Body>
                       <img src={Product} className="img-fluid img-product rounded-circle text-center" alt="product" />
-                      <Card.Title>Beef Spaghetti</Card.Title>
+                      <Card.Title className='detail-product'>Beef Spaghetti</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">20% OFF</Card.Subtitle>
                       <Card.Text>
                       Buy 1 Choco Oreo and get 20% off for Beef Spaghetti
                       </Card.Text>
-                      <Card.Text>
+                      <Card.Text className='border-coupon'>
                       COUPON CODE
                       </Card.Text>
                       <Card.Title>FNPR15RG</Card.Title>
@@ -38,91 +42,74 @@ export default class InputProduct extends Component {
                       </Card.Text>
                     </Card.Body>
                   </Card>
+                    </div>
+                    <div className="d-grid gap-2 mt-4">
+                      <BDButton className="btn-secondary btn-product text-cream fw-bold">Take a picture</BDButton>
+                      <BDButton className="btn-secondary btn-product text-cream fw-bold">Choose from gallery</BDButton>
+                    </div>
+                    <div className='mt-5'>
+                </div>
                     <div className='mt-5'>
                     <Form.Group className="mb-3 align-items-left" controlId="formBasicEmail">
-                      <Form.Label>Expire date :</Form.Label>
-                      <BDInput type="date-time" className="mt-3" placeholder="October 7th 2020"></BDInput>
-                      <BDInput type="date-time" className="mt-2" placeholder="October 10th 2020"></BDInput>
+                      <Form.Label className='fw-bold'>Expired Date:</Form.Label>
+                      <BDInput type="date" className="mt-3" placeholder="Select start hour"></BDInput>
+                      <BDInput type="date" className="mt-2" placeholder="Select end hour"></BDInput>
                     </Form.Group>
                     <Form.Group className="mt-5 align-items-left" controlId="formBasicEmail">
-                      <Form.Label>Input promo code :</Form.Label>
-                      <BDInput type="number" placeholder="FNPR15RG" className="mt-3"/>
+                      <Form.Label className='fw-bold'>Input promo code :</Form.Label>
+                      <BDInput type="text" placeholder="FNPR15RG" className="mt-3"/>
                     </Form.Group>
                     </div>
                 </div>
-                <div className='col-md-6 col-xl-5'>
+                <div className='col-md-6 col-xl-6'>
                   <Form>
-                      <Form.Group className="mb-3 text-left mt-sm-4" controlId="formBasicEmail">
-                      <Form.Label>Name:</Form.Label>
+                      <Form.Group className="mb-3 text-left mt-sm-4" controlId="formBasicName">
+                      <Form.Label className='fw-bold'>Name :</Form.Label>
                       <BDInput type="text" className="mt-3" placeholder="Beef Spaghetti"></BDInput>
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Label>Price:</Form.Label>
-                      <BDInput type="number" className="mt-3" placeholder="70.000" />
+                    <Form.Group className="mb-3 text-left mt-sm-4" controlId="formBasicNumber">
+                      <Form.Label className='fw-bold'>Price :</Form.Label>
+                      <BDInput type="number" className="mt-3" placeholder="70.000"></BDInput>
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Label>Description:</Form.Label>
-                      <BDInput type="number" className="mt-3" placeholder="Buy 1 Choco Oreo and get 20% off for Beef Spaghetti" />
+                    <Form.Group className="mb-3" controlId="formBasicText">
+                      <Form.Label className='fw-bold'>Description :</Form.Label>
+                      <BDInput type="text" className="mt-3" placeholder="Buy 1 Choco Oreo and get 20% off for Beef Spaghetti" />
                     </Form.Group>
                     <div>
-                      <Form.Label>Input Product Size:</Form.Label>
+                      <Form.Label className='fw-bold'>Input delivery methods :</Form.Label>
                       <div>
-                        <Form.Text>
+                        <Form.Text id="passwordHelpBlock" muted>
                         Click product size you want to use for this promo
                         </Form.Text>
                       </div>
                       <div className="mt-3">
-                        <ToggleButtonGroup type="checkbox" className="mb-2 form-checkbox justify content-center">
-                          <ToggleButton id="tbg-check-1" className='btn-product-size cup rounded-circle ms-2 text-cream' value={1}>
-                            R
-                          </ToggleButton>
-                          <ToggleButton id="tbg-check-2" className='btn-product-size cup rounded-circle ms-2 text-cream' value={2}>
-                            L
-                          </ToggleButton>
-                          <ToggleButton id="tbg-check-3" className='btn-product-size cup rounded-circle ms-2 text-cream' value={3}>
-                            XL
-                          </ToggleButton>
-                          <ToggleButton id="tbg-check-3" className='btn-product-size gram rounded-circle ms-2 text-cream' value={3}>
-                            250 gr
-                          </ToggleButton>
-                          <ToggleButton id="tbg-check-3" className='btn-product-size gram rounded-circle ms-2 text-cream' value={3}>
-                            300 gr
-                          </ToggleButton>
-                          <ToggleButton id="tbg-check-3" className='btn-product-size gram rounded-circle ms-2 text-cream' value={3}>
-                            500 gr
-                          </ToggleButton>
-                        </ToggleButtonGroup>
+                        <BDButton className='btn-primary btn-product-size fw-bold'>R</BDButton>
+                        <BDButton className='btn-primary btn-product-size fw-bold'>L</BDButton>
+                        <BDButton className='btn-primary btn-product-size fw-bold'>XL</BDButton>
+                        <BDButton className='btn-secondary btn-product-size fw-bold'>250 gr</BDButton>
+                        <BDButton className='btn-secondary btn-product-size fw-bold'>300 gr</BDButton>
+                        <BDButton className='btn-secondary btn-product-size fw-bold'>500 gr</BDButton>
                       </div>
                     </div>
                     <div className="mt-4" >
-                      <Form.Label>Input Delivery Methods:</Form.Label>
+                      <Form.Label className='fw-bold'>Input Delivery Methods:</Form.Label>
                       <div>
-                        <Form.Text>
+                        <Form.Text id="passwordHelpBlock" muted>
                         Click methods you want to use for this promo
                         </Form.Text>
                       </div>
                       <div className="mt-3">
-                        <ToggleButtonGroup type="checkbox" className="mb-2 form-checkbox">
-                          <ToggleButton id="tbg-check-1" className='btn-deliver-method ms-3 text-cream fw-bold' value={1}>
-                            Home Delivery
-                          </ToggleButton>
-                          <ToggleButton id="tbg-check-2" className='btn-deliver-method ms-3 text-cream fw-bold' value={2}>
-                            Dine in
-                          </ToggleButton>
-                          <ToggleButton id="tbg-check-3" value={3} className='btn-deliver-method text-cream ms-3 fw-bold'>
-                          Take away
-                          </ToggleButton>
-                        </ToggleButtonGroup>
+                        <BDButton className="btn-secondary btn-delivery text-gray">Home Delivery</BDButton>
+                        <BDButton className="btn-secondary btn-delivery text-gray">Dine in</BDButton>
+                        <BDButton className="btn-primary btn-delivery text-gray">Take Away</BDButton>
                       </div>
-                    </div>
-                    <div>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Label>Enter the discount :</Form.Label>
-                      <BDInput type="number" className="mt-3" placeholder="Example 20%" />
-                    </Form.Group>
+                      <Form.Group className="mt-3" controlId="formBasicText">
+                      <Form.Label className='fw-bold'>Enter the discount :</Form.Label>
+                      <BDInput type="text" className="mt-3" placeholder="20%" />
+                      </Form.Group>
                     </div>
                     <div className="d-grid gap-2 mt-5">
-                      <BDButton className="btn-primary btn-product text-cream fw-bold">Save Change</BDButton>
+                      <BDButton className="btn-secondary btn-product text-cream fw-bold">Save Change</BDButton>
                     </div>
                   </Form>
                 </div>

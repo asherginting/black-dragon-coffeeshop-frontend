@@ -1,0 +1,55 @@
+.chat-page {
+  background-image: url(../images/bg-chat-page.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  .left-content {
+    border-radius: 20px 0 0 20px;
+  }
+  .right-content {
+    border-radius: 0 20px 20px 0;
+  }
+  form {
+    button, input {
+      height: 50px;
+      padding-left: 10px;
+      width: 100%;
+    }
+    input {
+      border: none !important;
+      border-radius: 0 30px 30px 0 !important;
+    }
+  }
+  .btn-search {
+    width: 20%;
+    border-radius: 0 !important;
+    border-radius: 30px 0 0 30px !important;
+    border: none !important;
+  }
+  .photo-user {
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    border-radius: 50px;
+  }
+  .text-chat {
+    width: 70%;
+  }
+  .notif {
+    width: 40%;
+    border-radius: 100px;
+    align-self: center;
+  }
+  .text-information {
+    margin: 120px 30px;
+  }
+  @media all and (max-width: 992px) {
+    .left-content, .right-content {
+      border-radius: 0;
+    }
+  }
+  @media all and (max-width: 576px) {
+    .opacity {
+      padding: 0 10px;
+    }
+  }
+}

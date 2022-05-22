@@ -1,0 +1,49 @@
+.img-product {
+  width: 200px;
+  height: 200px;
+}
+
+.btn-product {
+  height: 88px;
+}
+
+.btn-product-size {
+  height: 80px !important;
+  width: 80px !important;
+  border-radius: 200px;
+  margin: 5px;
+}
+
+.form-checkbox {
+  height: 70px;
+  width: 100%;
+}
+
+.btn-product-size {
+  height: 70px;
+  width: 100%;
+}
+
+.btn-deliver-method {
+  height: 72px;
+  width: 100%;
+  font-size: 20px;
+}
+
+.btn-delivery {
+  height: 50px;
+  margin: 5px;
+}
+
+.border-coupon {
+  border-top: 1px dashed black;
+  padding-top: 30px;
+}
+
+.detail-product {
+  padding-top: 30px;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  content: ">";
+}

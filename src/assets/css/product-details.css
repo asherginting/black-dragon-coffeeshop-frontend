@@ -26,11 +26,11 @@
   -webkit-box-shadow: 0px 11px 40px -3px rgba(0,0,0,17%);
   -moz-box-shadow: 0px 11px 40px -3px rgba(0,0,0,17%);
 }
-.product-details .delivery-card .btn:focus {
+.product-details .delivery-card .btn:hover {
   background-color: #A5C3A9 !important;
 }
 .product-details .delivery-card .door {
-  margin: 0 20px;
+  margin: 0 7px;
 }
 .product-details .time-input {
   padding: 15px 10px;
@@ -54,6 +54,37 @@
 .product-details .counter .border {
   border: 1px solid rgb(164, 164, 164) !important;
 }
+.product-details .size-container,
+.product-details .checkout-container {
+  border-radius: 15px;
+  box-shadow: 0px 11px 40px -3px rgba(0,0,0,17%);
+  -webkit-box-shadow: 0px 11px 40px -3px rgba(0,0,0,17%);
+  -moz-box-shadow: 0px 11px 40px -3px rgba(0,0,0,17%);
+}
+.product-details .btn-size {
+  border-radius: 50px !important;
+  width: 60px;
+  height: 60px;
+}
+.product-details .btn-size:focus {
+  background-color: rgb(64, 125, 95);
+}
+.product-details .img-bottom {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.product-details .check-out {
+  text-decoration: none;
+}
+.product-details .btn-check-out {
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+}
 @media all and (max-width: 1199px) {
   .product-details .delivery-choice button {
     padding: 10px !important;
@@ -75,6 +106,9 @@
   }
   .product-details .now-btn .yes {
     margin-right: 7px !important;
+  }
+  .product-details .btn-now:focus {
+    background-color: #A5C3A9;
   }
 }
 @media all and (max-width: 760px) {

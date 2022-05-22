@@ -35,6 +35,9 @@
   .bg-third {
     background-color: #e1c57f;
   }
+  input, textarea {
+    border: none !important;
+  }
   @media all and (max-width: 992px) {
     .card-right {
       padding-left: 10px;

@@ -1,10 +1,28 @@
+/* eslint-disable camelcase */
 // import React from 'react';
 import { FaPencilAlt } from 'react-icons/fa';
-import Profile from '../assets/img/profile-picture.png';
+import Profile from '../assets/images/default-profile.jpg';
 import Layout from '../layouts/Layout';
 import Button from '../components/BDButton';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { logout } from '../redux/actions/auth';
 
 const profilePage = () => {
+  const dispatch = useDispatch();
+  const { auth } = useSelector(state => state);
+
+  useEffect(() => {
+    console.log('auth', auth);
+  }, []);
+
+  const logOutHandler = () => {
+    localStorage.removeItem('user');
+    dispatch(logout());
+  };
+
+  const { address, birthdate, display_name, email, first_name, last_name, gender, image, phone } = auth.dataUser;
+
   return (
     <>
     <Layout>
@@ -18,14 +36,14 @@ const profilePage = () => {
                   <form>
                     <div className="text-center">
                       <div className="d-inline-block profile-pic">
-                        <img src={Profile} className="img-rounded-circle mt-4 img-fluid" alt="profile-pic" />
+                        <img src={image || Profile} className="img-rounded-circle mt-4 profile-pict img-fluid" alt="profile-pic" />
                       </div>
                     </div>
                     <div className="profileName text-center">
-                      <h2 className="username">Zulaikha</h2>
+                      <h2 className="username">{display_name || 'username'}</h2>
                     </div>
                     <div className="profileDesc text-center">
-                      <p>zulaikha17@gmail.com</p>
+                      <p>{email}</p>
                     </div>
                     <div className='row mb-2'>
                       <div className='col-12 justify-content-center'>
@@ -72,7 +90,7 @@ const profilePage = () => {
                     <div className='row mb-4'>
                       <div className='col-12 justify-content-center'>
                         <div className='text-center'>
-                          <Button className='btn btn-primary w-75'>Logout</Button>
+                          <Button onClick={logOutHandler} className='btn btn-primary w-75'>Logout</Button>
                         </div>
                       </div>
                     </div>
@@ -94,11 +112,11 @@ const profilePage = () => {
                       <div className="row mb-3">
                         <div className="col">
                           <label className="mb-2">Email address: </label>
-                          <input className="d-block w-100 input-underline" type="text" value="zulaikha17@gmail.com" />
+                          <input className="d-block w-100 input-underline" type="text" defaultValue={email} />
                         </div>
                         <div className="col">
                           <label className="mb-2">Mobile number: </label>
-                          <input className="d-block w-100 input-underline" type="text" value="(+62)813456782" />
+                          <input className="d-block w-100 input-underline" type="text" defaultValue={phone} />
                         </div>
                       </div>
                     </section>
@@ -106,7 +124,7 @@ const profilePage = () => {
                       <div className='row mb-5'>
                         <div className="col-6 mb-3">
                           <label className="mb-2">Delvery address: </label>
-                          <textarea className="d-block w-100 input-underline">Iskandar Street no. 67 Block A Near Bus Stop</textarea>
+                          <textarea className="d-block w-100 input-underline">{address || 'Address user'}</textarea>
                         </div>
                       </div>
                     </section>
@@ -119,23 +137,23 @@ const profilePage = () => {
                       <div className="row mb-3">
                         <div className="col">
                           <label className="mb-2">Display name: </label>
-                          <input className="d-block w-100 input-underline" type="text" value="Zulaikha" />
+                          <input className="d-block w-100 input-underline" type="text" defaultValue={display_name || 'Username'} />
                         </div>
                         <div className="col">
                           <label className="mb-2">DD/MM/YY: </label>
-                          <input className="d-block w-100 input-underline" type="text" value="03/04/90" />
+                          <input className="d-block w-100 input-underline" type="text" defaultValue={birthdate || 'Birthdate user'} />
                         </div>
                       </div>
                       <div className='row mb-3'>
                         <div className="col-6 mb-3">
                           <label className="mb-2">First name: </label>
-                          <input className="d-block w-100 input-underline" type="text" value="Zulaikha" />
+                          <input className="d-block w-100 input-underline" type="text" defaultValue={first_name || 'First name user'} />
                         </div>
                       </div>
                       <div className='row mb-4'>
                         <div className="col-6 mb-3">
                           <label className="mb-2">Last name: </label>
-                          <input className="d-block w-100 input-underline" type="text" value="Nirmala" />
+                          <input className="d-block w-100 input-underline" type="text" defaultValue={last_name || 'User last name'}/>
                         </div>
                       </div>
                     </section>

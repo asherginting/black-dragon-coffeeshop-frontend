@@ -1,90 +1,105 @@
 /* Body Page */
-body{
-  font-family: 'Poppins', sans-serif;;
+body {
+  font-family: 'Poppins', sans-serif;
+  ;
 }
 
 /* Style Forgot Page */
-.header-forgot{
+.header-forgot {
   background-image: url(../img/bgForgot.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 758px;
 }
-.header-forgot .header-content{
-  background-color:rgba(0, 0, 0, 0.5);
+
+.header-forgot .header-content {
+  background-color: rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
   background-size: cover;
   height: 758px;
   color: white;
 }
-.header-forgot .header-content .header-nav svg{
+
+.header-forgot .header-content .header-nav svg {
   font-size: 30px;
   margin-right: 45px;
 }
-.header-forgot .header-content .header-nav span{
+
+.header-forgot .header-content .header-nav span {
   font-size: 24px;
 }
-.header-forgot .header-content h1.heading{
+
+.header-forgot .header-content h1.heading {
   font-size: 64px;
   text-align: center;
   font-weight: bold;
   line-height: 85px;
-  margin-top: 100px;
+  margin-top: 20px;
   margin-bottom: 0rem;
 }
-.header-forgot .header-content h3.heading{  
+
+.header-forgot .header-content h3.heading {
   text-align: center;
   font-weight: bold;
   line-height: 85px;
-  margin-bottom: 100px;
 }
-.header-forgot .header-content form div{
+
+.header-forgot .header-content form div {
   text-align: center;
 }
-.header-forgot .header-content form div input.forgotemail{
+
+.header-forgot .header-content form div input.forgotemail {
   height: 65px;
   border: none;
   border-radius: 10px;
   margin-top: 0rem;
-  margin-bottom: 89px;
+  margin-bottom: 18px;
   padding-left: 20px;
   font-size: 20px;
   background-color: white;
   color: grey;
 }
-.header-forgot .header-content form div .btn{
+
+.header-forgot .header-content form div .btn {
   height: 65px;
   border-radius: 10px;
 }
-.header-forgot .header-content form div input.forgotemail::placeholder{
+
+.header-forgot .header-content form div input.forgotemail::placeholder {
   color: grey;
 }
-.header-forgot .header-content form div input:focus{
+
+.header-forgot .header-content form div input:focus {
   outline: none;
 }
-.header-forgot .header-content .text{
+
+.header-forgot .header-content .text {
   font-size: 25px;
   font-weight: 700;
   text-align: center;
   line-height: 33px;
 }
-.header-forgot .header-content .text span{
+
+.header-forgot .header-content .text span {
   font-weight: 900;
 }
 
-@media (max-width: 375px){
-  .header-forgot .header-content h1.heading{
+@media (max-width: 375px) {
+  .header-forgot .header-content h1.heading {
     font-size: 44px;
   }
-  .header-forgot .header-content h3.heading{
+
+  .header-forgot .header-content h3.heading {
     font-size: medium;
     margin-bottom: 0px;
   }
-  .header-forgot .header-content form div input.forgotemail{
-    font-size: medium ;
+
+  .header-forgot .header-content form div input.forgotemail {
+    font-size: medium;
     margin-bottom: 5px;
   }
-  .header-forgot .header-content .text{
+
+  .header-forgot .header-content .text {
     font-size: medium;
   }
 }
@@ -93,45 +108,56 @@ body{
   .header-forgot .header-content {
     padding: 0 10px;
   }
+
   .header-forgot .header-content form div input {
     width: 100%;
   }
+
   .header-forgot .header-content form div button.button-send {
     width: 100%;
   }
+
   .header-forgot .header-content {
     padding: 0 10px;
   }
+
   .header-forgot .header-content form div input {
     width: 100%;
   }
+
   .header-forgot .header-content form div button.button-send {
     width: 100%;
   }
-  .header-forgot .header-content h1.heading{
+
+  .header-forgot .header-content h1.heading {
     font-size: 54px;
     margin-top: 30px;
     margin-bottom: 0rem;
   }
-  .header-forgot .header-content h3.heading{
+
+  .header-forgot .header-content h3.heading {
     font-size: medium;
     margin-bottom: 0px;
   }
-  .header-forgot .header-content .text{
+
+  .header-forgot .header-content .text {
     font-size: medium;
   }
-  .header-forgot .header-content form div input.forgotemail{
-    font-size: medium ;
+
+  .header-forgot .header-content form div input.forgotemail {
+    font-size: medium;
     margin-bottom: 5px;
   }
 }
 
-@media (max-width: 768px){
-  .header-forgot .header-content h1.heading{
-    margin-top: 40px;
+@media (max-width: 768px) {
+  .header-forgot .header-content h1.heading {
+    font-size: 40px;
+    margin-top: 10px;
     margin-bottom: 0rem;
   }
-  .header-forgot .header-content form div input.forgotemail{
-    font-size: small ;
+
+  .header-forgot .header-content form div input.forgotemail {
+    font-size: small;
   }
 }

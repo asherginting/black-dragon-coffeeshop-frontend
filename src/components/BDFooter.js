@@ -1,5 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import logo from '../assets/img/logo.svg';
 import '../assets/scss/BDFooter.scss';
 
@@ -35,7 +36,9 @@ export default function BDFooter () {
           </Col>
           <Col className='mt-5 mt-md-0'>
             <div className="brand-title d-md-flex align-items-center">
-              <img src={logo} height={36} className='bd-footer-logo' alt="" />
+              <Link to='/'>
+              <img src={logo} height={36} className='bd-footer-logo' alt="Black-Dragon" />
+              </Link>
               <h1 className='fs-5 mt-3 mt-md-0 fw-bolder m-lg-0 ms-md-3 ms-lg-3'>Black Dragon Coffeeshop</h1>
             </div>
             <p className='description mt-3 fw-bold'>

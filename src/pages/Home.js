@@ -12,8 +12,14 @@ import userPhoto1 from '../assets/images/user (1).png';
 import userPhoto2 from '../assets/images/user (2).png';
 import userPhoto3 from '../assets/images/user (3).png';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const { auth } = useSelector(state => state);
+
   return (
     <Layout>
     <header className="header-homepage home">
@@ -23,7 +29,7 @@ const Home = () => {
         <form className="col-lg-7 col-12">
           <h1>Start Your Day <br/> with Coffee and Good Meals </h1>
           <p>We provide high quality beans, good taste, and healthy <br/> meals made by love just for you. Start your day with us <br/> for a bigger smile!</p>
-          <button type='submit' className="btn btn-secondary" aria-label="explore">Get Started</button>
+          <button onClick={() => navigate('/products')} type='submit' className="btn btn-secondary" aria-label="explore">Get Started</button>
         </form>
           <div className='text-center m-0'>
             <div className="input-group rounded">
@@ -104,7 +110,7 @@ const Home = () => {
                 </div>
                 <div className='text-center order'>
                   <div className='price py-4'>IDR. 25.000</div>
-                  <button className='btn btn-outline-warning mb-5'>Order Now</button>
+                  <button className='btn btn-secondary mb-5'>Order Now</button>
                 </div>
               </div>
             </div>
@@ -122,8 +128,8 @@ const Home = () => {
                   </ul>
                 </div>
                 <div className='text-center order'>
-                  <div className='price py-4'>IDR. 25.000</div>
-                  <button className='btn btn-outline-warning mb-5'>Order Now</button>
+                  <div className='price py-4'>IDR. 30.000</div>
+                  <button className='btn btn-secondary mb-5'>Order Now</button>
                 </div>
               </div>
             </div>
@@ -142,8 +148,8 @@ const Home = () => {
                   </ul>
                 </div>
                 <div className='text-center order'>
-                  <div className='price py-4'>IDR. 25.000</div>
-                  <button className='btn btn-outline-warning mb-5'>Order Now</button>
+                  <div className='price py-4'>IDR. 40.000</div>
+                  <button className='btn btn-secondary mb-5'>Order Now</button>
                 </div>
               </div>
             </div>

@@ -27,7 +27,10 @@ header.profile {
   background-color: rgb(202, 207, 211);
   border-radius: 20px;
 }
-
+.profile .profile-pict {
+  width: 50%;
+  height: 50%;
+}
 section.profilePage img.img-rounded-circle {
   border-radius: 100px;
   margin-left: 0px;
